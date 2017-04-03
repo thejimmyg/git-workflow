@@ -1,1 +1,1 @@
-# My Stuff,  SO MANY THINGS
+# My stuff,  SO MANY THINGS

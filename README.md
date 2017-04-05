@@ -79,8 +79,8 @@ This is for working on a master branch on a fork.
    ```
    git fetch upstream
    git merge upstream/master
+   # Deal with any merge conflicts using `git add`, then `git commit`
    git status
-   git log
    ```
 
    4. If everything goes well, there won't be any changes because your origin and

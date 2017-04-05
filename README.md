@@ -81,10 +81,10 @@ This is for working on a master branch on a fork.
    git status
    ```
 
-   4. If everything goes well, there won't be any changes because your origin and
+   If everything goes well, there won't be any changes because your origin and
    local copy will both be in exactly the same state as upstream.
 
-9. Every time you start working, repeat 8.
+9. Every time you start working, repeat 4. if you have made commits, or 8. if you haven't.
 
    This is so you get the latest changes before you start, which will reduce
    the chance of any conflicts at the end.

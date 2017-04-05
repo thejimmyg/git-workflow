@@ -51,7 +51,7 @@ This is for working on a master branch on a fork.
    # Resolve the problem
    # e.g. vim package.json
    git add package.json
-   git rebase --continue
+   git merge --continue
    git status
    # Check it is OK
    git log
@@ -72,13 +72,21 @@ This is for working on a master branch on a fork.
    Make any extra changes requested, and push them to the branch on origin that
    contains your pull request for that pull request to be updated.
 
-7. The upstream maintainer will merge your pull request using a Rebase merge
+7. The upstream maintainer will merge your pull request using the Merge option (not rebase or squash).
 
-   Now you can pull in the upstream changes of your changes by repeating step
+8. Now you can pull in the upstream changes of your changes:
+
+   ```
+   git fetch upstream
+   git merge upstream/master
+   git status
+   git log
+   ```
+
    4. If everything goes well, there won't be any changes because your origin and
    local copy will both be in exactly the same state as upstream.
 
-8. Every time you start working, repeat 4
+9. Every time you start working, repeat 8.
 
    This is so you get the latest changes before you start, which will reduce
    the chance of any conflicts at the end.

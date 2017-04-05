@@ -72,7 +72,7 @@ This is for working on a master branch on a fork.
 
 7. The upstream maintainer will merge your pull request using the Merge option (not rebase or squash).
 
-8. Now you can pull in the upstream changes of your changes:
+8. Now you can pull in the upstream changes:
 
    ```
    git fetch upstream

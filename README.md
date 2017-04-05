@@ -38,8 +38,6 @@ This is for working on a master branch on a fork.
    ```
    git add file1 file2
    git commit -m "My changes"
-   # Push to your origin fork on GitHub
-   git push origin master
    ```
 
 4. Rebase your changes on top of latest master

@@ -43,15 +43,19 @@ This is for working on a master branch on a fork.
 4. Rebase your changes on top of latest master
 
    ```
-   git fetch upstream
-   git rebase upstream/master
+   git pull --rebase upstream master
+   ```
+   
+   If you get any conflicts, don't panic, they probably are not too hard to resovle:
+   
+   ```
    git status
-   # Resolve the problem
+   # Resolve the problem by following the instructions in git status, usually:
    # e.g. vim package.json
-   git add package.json
-   git merge --continue
+   git add <conflicting file>
+   git rebase --continue
    git status
-   # Check it is OK
+   # Once everything is OK, review your log and see that your commits are at the top
    git log
    ```
 
@@ -72,11 +76,18 @@ This is for working on a master branch on a fork.
 
 7. The upstream maintainer will merge your pull request using the Merge option (not rebase or squash).
 
+   Extra info for the curious:
+    
+   * A pull request merge commit, is simply a commit with two parents and no patch that just tracks that the most recent commits on the two branches have been brought together. You can see this by running `git show <commit>` on a merge commit and a normal commit to see the differences.
+   
+   * A squash merge is like a big patch between the two branches, all as a single commit.
+   
+   * The rebase merge option on GitHub re-writes the committer on the commits, so this isn't too helpful.
+
 8. Now you can pull in the upstream changes:
 
    ```
-   git fetch upstream
-   git merge upstream/master
+   git pull upstream master
    # Deal with any merge conflicts using `git add`, then `git commit`
    git status
    ```
@@ -84,7 +95,7 @@ This is for working on a master branch on a fork.
    If everything goes well, there won't be any changes because your origin and
    local copy will both be in exactly the same state as upstream.
 
-9. Every time you start working, repeat 4. if you have made commits, or 8. if you haven't.
+9. Every time you start working, if you have made commits repeat 4., if you haven't, repeat 8.
 
    This is so you get the latest changes before you start, which will reduce
    the chance of any conflicts at the end.

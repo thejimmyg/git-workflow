@@ -87,6 +87,7 @@ This is for working on a master branch on a fork.
 8. Now you can pull in the upstream changes:
 
    ```
+   git checkout master
    git pull upstream master
    # Deal with any merge conflicts using `git add`, then `git commit`
    git status

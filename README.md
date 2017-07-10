@@ -2,6 +2,13 @@
 
 This is for working on a master branch on a fork.
 
+Before starting, make sure you've set up your name and email in your git config:
+
+```
+git config --global user.email "email@example.com"
+git config --global user.name "My Name"
+```
+
 1. On GitHub, fork the repo, using the button at the top right.
 
    ```

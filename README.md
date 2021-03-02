@@ -1,6 +1,6 @@
 # Git Notes
 
-This is for working on a master branch on a fork.
+This is for working on a `main` branch on a fork.
 
 Before starting, make sure you've set up your name and email in your git config:
 
@@ -43,14 +43,14 @@ git config --global user.name "My Name"
 3. Do some work
 
    ```
-   git add file1 file2
+   git add -p
    git commit -m "My changes"
    ```
 
-4. Rebase your changes on top of latest master
+4. Rebase your changes on top of latest `main`
 
    ```
-   git pull --rebase upstream master
+   git pull --rebase upstream main
    ```
    
    If you get any conflicts, don't panic, they probably are not too hard to resovle:
@@ -73,7 +73,7 @@ git config --global user.name "My Name"
    Then when you are sure everything is up to date:
 
    ```
-   git push origin master
+   git push origin main
    ```
 
 6. Create pull request on github
@@ -81,7 +81,7 @@ git config --global user.name "My Name"
    Make any extra changes requested, and push them to the branch on origin that
    contains your pull request for that pull request to be updated.
 
-7. The upstream maintainer will merge your pull request using the Merge option (not rebase or squash).
+7. The upstream maintainer will merge your pull request using the Rebase option.
 
    Extra info for the curious:
     
@@ -89,21 +89,21 @@ git config --global user.name "My Name"
    
    * A squash merge is like a big patch between the two branches, all as a single commit.
    
-   * The rebase merge option on GitHub re-writes the committer on the commits, so this isn't too helpful.
+   * The rebase merge option on GitHub re-writes the committer on the commits.
 
 8. Now you can pull in the upstream changes:
 
    ```
-   git checkout master
-   git pull upstream master
-   # Deal with any merge conflicts using `git add`, then `git commit`
+   git checkout main
+   git pull --rebase upstream main
+   # Deal with any conflicts using `git add` and `git rebase --continue` as before
    git status
    ```
 
    If everything goes well, there won't be any changes because your origin and
    local copy will both be in exactly the same state as upstream.
 
-9. Every time you start working, if you have made commits repeat 4., if you haven't, repeat 8.
+9. Every time you start working, repeat 8.
 
    This is so you get the latest changes before you start, which will reduce
    the chance of any conflicts at the end.

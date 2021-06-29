@@ -53,7 +53,7 @@ git config --global user.name "My Name"
    git pull --rebase upstream main
    ```
    
-   If you get any conflicts, don't panic, they probably are not too hard to resovle:
+   If you get any conflicts, don't panic, they probably are not too hard to resolve:
    
    ```
    git status
